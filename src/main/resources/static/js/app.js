@@ -1,9 +1,12 @@
+// Backend URL on Render
+const BACKEND_URL = 'https://integracao-backend-frontend.onrender.com';
+
 // Requests the GET endpoint and displays the returned message
 async function buscarMensagem() {
     try {
-        const response = await fetch('/api/mensagem'); // Ensure the URL is correct
-        const data = await response.text(); // Use .text() for plain text response
-        document.getElementById('resultado-get').innerText = data; // Display the response in the div
+        const response = await fetch(`${BACKEND_URL}/api/mensagem`);
+        const data = await response.text();
+        document.getElementById('resultado-get').innerText = data;
     } catch (error) {
         alert('Erro ao buscar mensagem: ' + error.message);
     }
@@ -15,15 +18,13 @@ async function enviarDados() {
     if (!dados) return alert("Por favor, insira algum dado antes de enviar.");
 
     try {
-        const response = await fetch('/api/dados', { // Ensure the URL is correct
+        const response = await fetch(`${BACKEND_URL}/api/dados`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'text/plain' // Set content type to plain text
-            },
+            headers: { 'Content-Type': 'text/plain' },
             body: dados
         });
         const data = await response.text();
-        document.getElementById('resultado-post').innerText = data; // Display the response in the div
+        document.getElementById('resultado-post').innerText = data;
     } catch (error) {
         alert('Erro ao enviar dados: ' + error.message);
     }

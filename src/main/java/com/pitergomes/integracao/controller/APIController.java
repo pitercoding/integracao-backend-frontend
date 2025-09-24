@@ -9,7 +9,7 @@ public class APIController {
 
     @GetMapping("/mensagem")
     public String getMensagem() {
-        return "Dados do Back-End Spring Boot";
+        return "Servidor funcionando! Recebendo dados do Back-End com Spring Boot";
     }
 
     @PostMapping("/dados")

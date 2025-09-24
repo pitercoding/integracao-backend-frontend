@@ -1,12 +1,15 @@
 // Backend URL on Render
-const BACKEND_URL = 'https://integracao-backend-frontend.onrender.com';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://integracao-backend-frontend.onrender.com';
 
 // Requests the GET endpoint and displays the returned message
 async function buscarMensagem() {
+    const hero = document.getElementById("hero");
+
     try {
         const response = await fetch(`${BACKEND_URL}/api/mensagem`);
         const data = await response.text();
         document.getElementById('resultado-get').innerText = data;
+        hero.style.opacity = 1;
     } catch (error) {
         alert('Erro ao buscar mensagem: ' + error.message);
     }

@@ -1,5 +1,5 @@
-// Backend URL on Render
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://integracao-backend-frontend.onrender.com';
+// URL do backend no Render
+const BACKEND_URL = 'https://integracao-backend-frontend.onrender.com';
 
 // Requests the GET endpoint and displays the returned message
 async function buscarMensagem() {
@@ -33,6 +33,7 @@ async function enviarDados() {
     }
 }
 
+// Limpa campos e resultados
 function limparCampos() {
     document.getElementById('resultado-get').innerText = '';
     document.getElementById('resultado-post').innerText = '';

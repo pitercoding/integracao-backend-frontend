@@ -20,11 +20,17 @@ async function enviarDados() {
             headers: {
                 'Content-Type': 'text/plain' // Set content type to plain text
             },
-            body: input
+            body: dados
         });
         const data = await response.text();
         document.getElementById('resultado-post').innerText = data; // Display the response in the div
     } catch (error) {
         alert('Erro ao enviar dados: ' + error.message);
     }
+}
+
+function limparCampos() {
+    document.getElementById('resultado-get').innerText = '';
+    document.getElementById('resultado-post').innerText = '';
+    document.getElementById('dados-input').value = '';
 }

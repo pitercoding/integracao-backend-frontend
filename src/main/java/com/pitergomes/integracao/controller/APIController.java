@@ -9,11 +9,11 @@ public class APIController {
 
     @GetMapping("/mensagem")
     public String getMensagem() {
-        return "Servidor funcionando! Recebendo dados do Back-End com Spring Boot";
+        return "Servidor ativo! Recebendo dados do Back-End.";
     }
 
     @PostMapping("/dados")
     public String postMethodName (@RequestBody String dados){
-        return "Recebido: " + dados;
+        return "Recebido pelo servidor: " + dados;
     }
 }

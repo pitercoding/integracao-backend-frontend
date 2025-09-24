@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <title>Integração com Spring Boot</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/logo-ico.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" >
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <h1>Integração: Front-End e Back-End</h1>
 
         <!-- GET -->
-        <button onclick="buscarMensagem()">Testar Servidor</button>
-        <div id="resultado-get" class="result-box"></div>
+        <section class="card">
+            <h2>Teste do Servidor</h2>
+            <button onclick="buscarMensagem()">Testar Servidor</button>
+            <div id="resultado-get" class="result-box"></div>
+        </section>
 
         <!-- POST -->
-        <input type="text" id="dados-input">
-        <button onclick="enviarDados()">Enviar Para Servidor</button>
-        <div id="resultado-post" class="result-box"></div>
-    </div>
+        <section class="card">
+            <h2>Enviar Dados</h2>
+            <form onsubmit="event.preventDefault(); enviarDados();">
+                <input type="text" id="dados-input" placeholder="Digite algo para enviar">
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="resultado-post" class="result-box"></div>
+        </section>
+        <button class="limpar" onclick="limparCampos()">Limpar Tudo</button>
+    </main>
 
     <script src="js/app.js"></script>
+    
 </body>
 </html>

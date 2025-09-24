@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-/* 🎨 Paleta de Cores - facilmente editável */
+/* Paleta de Cores */
 :root {
-    --color-bg-start: #2c3e50;   /* azul petróleo */
-    --color-bg-end:   #4ca1af;   /* azul claro esverdeado */
+    --color-bg-start: #2c3e50;
+    --color-bg-end:   #4ca1af;
 
     --color-card-bg: rgba(0, 0, 0, 0.25);
     --color-container-bg: rgba(255, 255, 255, 0.08);
@@ -19,6 +19,9 @@
 
     --color-result-bg: rgba(255, 255, 255, 0.05);
     --shadow-default: 0 8px 20px rgba(0,0,0,0.25);
+
+    --color-clear-bg: #e74c3c;
+    --color-clear-hover: #c0392b;
 }
 
 * {
@@ -35,7 +38,15 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5%;
+    padding: 20px;
+}
+
+.layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .container {
@@ -54,6 +65,23 @@ h1 {
     margin-bottom: 20px;
     font-size: 2em;
 }
+
+.hero-image {
+    width: 100%;                   /* ocupa toda a largura do container */
+    max-height: 200px;             /* altura máxima desejada */
+    object-fit: cover;             /* mantém proporção e “corta” se necessário */
+    margin: 20px 0;                /* espaçamento acima e abaixo */
+    border-radius: 12px;           /* cantos arredondados */
+    opacity: 0.5;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.hero-image:hover {
+    opacity: 1;
+}
+
 
 h2 {
     margin-bottom: 10px;
@@ -85,6 +113,17 @@ button:hover {
     transform: scale(1.05);
 }
 
+button.limpar {
+    background: var(--color-clear-bg);
+    opacity: 0.6;
+    transition: opacity 0.3s, transform 0.2s, background 0.3s;
+}
+
+button.limpar:hover {
+    opacity: 1;
+    transform: scale(1.05); 
+}
+
 input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -111,19 +150,16 @@ input::placeholder {
     background: var(--color-result-bg);
 }
 
-button.limpar {
-    background: #e74c3c;
-}
-
-button.limpar:hover {
-    background: #c0392b;
-}
-
 /* Responsividade */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+    .layout {
+        flex-direction: column;
+    }
+
     h1 {
         font-size: 1.5em;
     }
+
     button {
         width: 100%;
     }

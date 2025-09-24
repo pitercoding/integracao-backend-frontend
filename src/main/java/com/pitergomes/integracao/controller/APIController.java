@@ -13,7 +13,7 @@ public class APIController {
     }
 
     @PostMapping("/dados")
-    public String postMethodName (@RequestBody String dados){
+    public String postDados (@RequestBody String dados){
         return "Recebido pelo servidor: " + dados;
     }
 }

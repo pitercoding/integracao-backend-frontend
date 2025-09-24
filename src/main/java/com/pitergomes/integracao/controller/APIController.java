@@ -2,6 +2,7 @@ package com.pitergomes.integracao.controller;
 
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "https://integracao-backend-frontend.vercel.app/")
 @RestController
 @RequestMapping("/api")
 
